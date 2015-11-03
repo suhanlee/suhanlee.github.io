@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "[Ruby] gem command"
+date:   2015-11-04 02:56:00 +0900
+categories: Ruby
+---
+
+# RubyGems
+
+gem 명령어는 `$ gem help commands` 를 통해서 간략히 알아 볼 수 있으며, 
+`build` `cert` `check` `cleanup` `contents` `dependency` `environment`
+`fetch` `install` `list` `lock` `open` `search` `server` `sources` 등이 있다.
+
+
+### sources
+gem 을 이용하여 라이브러리를 사용할 때 사내 방화벽 정책 때문에 SSL 을 통하여
+
+사용하지 못하는 경우가 종종 있다. 그런 경우에 gem 의 sources 를 다른 경로를 추가 및 삭제가 가능하다.
+
+$ gem sources --add https://rubygems.org
+        https://rubygems.org added to sources
+        
+$ gem sources --remove http://rubygems.org
+        http://rubygems.org removed from sources
+        
+        
+### list
+현재 설치되어 있는 gem 목록을 살펴볼 수 있는 명령어이다.
+
+$ gem list
+
+
+### search
+gem 이름에 대해서 정규표현식 기반으로 검색이 가능하다. 일반적으로 기본 명령어 `$ gem search` 를 사용하게 될 경우에
+기본적으로 `REMOTE` 에 대한 검색이 이루어진다. 현재 로컬에 대한 gem 기반의 검색이라면 `--local` 옵션으로 검색 가능하다.
+
+$ gem search rails --local
+
+`*** LOCAL GEMS ***`
+
+*coffee-rails (4.1.0)*
+
+*jquery-rails (4.0.5)*
+
+*rails (4.2.4)*
+
+*rails-deprecated_sanitizer (1.0.3)*
+
+*rails-dom-testing (1.0.7, 1.0.6)*
+
+*rails-html-sanitizer (1.0.2)*
+
+*sass-rails (5.0.4)*
+
+*sprockets-rails (2.3.3)*
