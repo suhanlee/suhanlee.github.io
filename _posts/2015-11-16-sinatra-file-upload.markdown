@@ -39,17 +39,16 @@ post '/upload/:filename' do
 {% endhighlight %}
 
 
->**Request**
+> **Request**
 > $ curl --trace-ascii /dev/stdout -X POST -H Accept:application/json -F 'file=@test1.txt' 'http://localhost:4567/upload/test.txt'
 
 > **Note:**
-
 > - --trace-ascii 은 요청과정에 데이터를 지정한 타깃에 아스키 형태로 출력한다.  여기서 /dev/stdout 은 화면이다. 참고로 --trace 옵션은 Hex 형태로 출력한다.
 > - -X POST 는 METHOD 를 POST 로 요청하겠다는 것을 의미한다.
 > - -H Accept:application/json 은 응답받을 데이터 타입 유형으로 json 을 선호한다는 것을 의미한다.
 > - -F 'file=@test1.txt' multipart 형태로 file 을 지정하는 것을 의미. @는 필수다.
 
->**Result:**
+> **Result:**
 >{% highlight ruby %}
 
 == Info:   Trying 127.0.0.1...
