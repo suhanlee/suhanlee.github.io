@@ -14,7 +14,8 @@ Sinatra로 file upload 구현하기
 > - params[:file] 안에 파일과 관련된 정보(파일이름, 파일 내용, 파일 타입 등)가 위치한다.
 > - params[:file][:tempfile] 은 실제 클라이언트가 업로드하는 파일 내용이 위치한다. 
  
-```
+{% highlight ruby %}
+ 
 post '/upload/:filename' do
 		filename = params[:filename]
 		tempfile = params[:file][:tempfile]
@@ -35,7 +36,8 @@ post '/upload/:filename' do
 
 		status
 	end
-```
+{% endhighlight %}
+
 
 >**Request**
 > $ curl --trace-ascii /dev/stdout -X POST -H Accept:application/json -F 'file=@test1.txt' 'http://localhost:4567/upload/test.txt'
@@ -48,7 +50,8 @@ post '/upload/:filename' do
 > - -F 'file=@test1.txt' multipart 형태로 file 을 지정하는 것을 의미. @는 필수다.
 
 >**Result:**
->```
+>{% highlight ruby %}
+
 == Info:   Trying 127.0.0.1...
 == Info: Connected to localhost (127.0.0.1) port 4567 (#0)
 => Send header, 235 bytes (0xeb)
@@ -103,4 +106,4 @@ post '/upload/:filename' do
 <= Recv data, 14 bytes (0xe)
 0000: {"status":200}
 == Info: Connection #0 to host localhost left intact
-```
+{% endhighlight %}
