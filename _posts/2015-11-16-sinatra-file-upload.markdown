@@ -24,7 +24,6 @@ post '/upload/:filename' do
     begin
         FileUtils.mkdir_p(save_dir) unless File.exists?(save_dir)
         filename = File.join(save_dir, filename)
-        puts params
         File.open(filename, 'wb') do |file|
             file.write(tempfile.read)
         end
