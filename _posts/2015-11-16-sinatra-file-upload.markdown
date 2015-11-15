@@ -17,25 +17,25 @@ Sinatra로 file upload 구현하기
 {% highlight ruby %}
  
 post '/upload/:filename' do
-		filename = params[:filename]
-		tempfile = params[:file][:tempfile]
-		save_dir = "./upload"
+	filename = params[:filename]
+	tempfile = params[:file][:tempfile]
+	save_dir = "./upload"
 
-		begin
-			FileUtils.mkdir_p(save_dir) unless File.exists?(save_dir)
-			filename = File.join(save_dir, filename)
-			puts params
-			File.open(filename, 'wb') do |file|
-				file.write(tempfile.read)
-			end
+	begin
+		FileUtils.mkdir_p(save_dir) unless File.exists?(save_dir)
+		filename = File.join(save_dir, filename)
+		puts params
+		File.open(filename, 'wb') do |file|
+		    file.write(tempfile.read)
+	    end
 
-			status = {:status => 200}.to_json
-		rescue Exception => e
-			status = {:error_message => e.message, :status => 500}.to_json
-		end
-
-		status
+		status = {:status => 200}.to_json
+	rescue Exception => e
+		status = {:error_message => e.message, :status => 500}.to_json
 	end
+
+	status
+end
 {% endhighlight %}
 
 
