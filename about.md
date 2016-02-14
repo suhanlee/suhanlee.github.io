@@ -1,9 +1,11 @@
 ---
-layout: page
+layout: about
 title: About
+author: Suhan Lee
 permalink: /about/
 ---
 
-This is suhanlee's blog.
+Hi! My name is <span class="highlight-span">Suhan Lee</span>!
 
-about Android, Web, Game's article.
+> Software Development
+

@@ -1,19 +1,53 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# User Settings | Edit these according to your site
 
-# Site settings
-title: Geek-Hub Life
+title: devsh
 email: suhan.lee.k@gmail.com
+author: Suhan Lee
+
 description: > # this means to ignore newlines until "baseurl:"
-  Android, Web, Media, Game Hacker.
+  Go, Ruby, Python, Node.JS, Java, C++ ...
+
+url: "http://suhanlee.gitub.io" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://suhanlee.github.io" # the base hostname & protocol for your site
 twitter_username: gabriel_rhee
 github_username:  suhanlee
 
-# Build settings
+permalink:          /:year/:title.html
+
+paginate: 8
+paginate_path: "/page/:num"
+comments: true
+
+heading_font: Lobster 
+about_footer: true
+short_bio: >
+    A day without laughter is a day wasted.
+profile_picture: https://avatars0.githubusercontent.com/u/2666166?v=3&s=460
+
+google_analytics: true
+tracking_id: # Your google analytics tracking id
+
+# Build settings | Do not edit anything below this
 markdown: kramdown
+
+gems:
+  - jekyll-paginate
+
+sass:
+  style:            compressed
+  sass_dir:         _sass
+
+# Scopes
+defaults:
+  -
+    scope:
+      path:         ""
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      path:         ""
+      type:         "posts"
+    values:
+      layout:       "post"
