@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "[Python] Python 은 Strong type 이다. 
-date:   2015-02-10 02:00:00 +0900
+title:  "[Python] Pyhon의 기본 매개변수 초기화에 대해서" 
+date:   2016-02-10 02:00:00 +0900
 categories: Python
 ---
 

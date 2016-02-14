@@ -7,6 +7,10 @@ categories: Android
 아래와 같이 pid 값을 가지고 현재 실행중인 프로세스 정보를 가져오려고 할때 Android M 이전 OS 에서는 다른 앱 프로세스 정보를 가져올 수 있으나
 Android M OS 에서는 자신의 프로세스 외에는 정보를 가져오지 못하는 것을 확인했다.
 
+추가적으로 기존에 getRunningAppProcess 는 4.4 이하 버전과 5.0 이후의 동작에 대해서 안드로이드 구조적인 변경사항이 있다.
+이 글은 어디까지나 시스템 권한이 있을 경우에서 발생한 특정 이슈와 관련된 이야기며
+특정 제조사의 5.1 바이너리에서 재현된 것을 밝힌다.
+
 {% highlight java %}
 public static String getAppPackageNameByPID(Context context, int pid) {
     ActivityManager manager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
