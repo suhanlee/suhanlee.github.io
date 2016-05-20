@@ -11,7 +11,8 @@ $ git add item
 
 $ git reset item
 
-> item 을 staging 에 제외
+> item 을 staging 에 제외, 즉 git add 의 반대 명령어
+> git rm item 은 파일을 실제 삭제하고 staging 에 반영
 
 
 $ git branch -m item item2
@@ -37,3 +38,7 @@ $ git checkout item
 $ git checkout -b item
 
 > item 브랜치 생성 후 바로 이동
+
+$ git submodule update --init --recursive
+
+> submodule을 재귀적으로 초기화
