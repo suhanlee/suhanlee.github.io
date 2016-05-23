@@ -5,7 +5,7 @@ email: suhan.lee.k@gmail.com
 author: Suhan Lee
 
 description: > # this means to ignore newlines until "baseurl:"
-  Go, Ruby, Python, Node.JS, Java, C++ ...
+  Software Development journey
 
 url: "http://suhanlee.gitub.io" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
