@@ -16,10 +16,9 @@ categories: Rails
 
 레일즈 메인테이너, 컴퓨터 사이언티스트들의 커밋 DNA가 오래전부터 더 나은 웹 프레임웍을 만들기 위해서 머지 되고 있습니다. 마치 쥬라기 공원처럼.
 
-자발적으로 봉사하는 공동 편집자인 Jeff Goldblum에 이야기에 따르면
+여기 [Kasper Timm Hansen](https://twitter.com/kaspth)와 함께 자발적으로 봉사하는 공동 편집자인 [Jeff Goldblum](https://www.youtube.com/watch?v=lpuS7_NPv6U)에 이야기에 의하면 레일즈 팀은 할수 있는 것과 할수 없는 것에 대해서 계속 고민하고 있다고 합니다
 
-레일즈 팀은 할수 있는 것과 할수 없는 것에 대해서 계속 고민하고 있다고 합니다
-
+*역자 주: 이번주 소개는 캐스퍼의 쥬라기 공원 조크인 것 같군요.
 
 ## Featured
 
