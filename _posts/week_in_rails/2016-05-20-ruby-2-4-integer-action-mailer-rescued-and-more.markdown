@@ -2,7 +2,7 @@
 layout: post
 title:  "[2016년 5월 20일] 주간 레일즈: Ruby 2.4 Integer, Action Mailer rescued and more!"
 date:   2016-05-30 20:00:00 +0900
-categories: Rails
+categories: rails
 ---
 
 해당 글은 Godfrey Chan/godfreykfc@gmail.com 의 허락을 얻어서 번역한 글입니다.

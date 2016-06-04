@@ -2,7 +2,7 @@
 layout: post
 title:  "[2016년 6월 4일] 주간 레일즈: 사과드립니다, Initializer 변경사항 및 그 외!"
 date:   2016-06-04 20:00:00 +0900
-categories: Rails
+categories: rails
 ---
 
 해당 글은 Godfrey Chan/godfreykfc@gmail.com 의 허락을 얻어서 번역한 글입니다.
