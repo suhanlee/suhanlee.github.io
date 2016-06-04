@@ -12,7 +12,7 @@ categories: rails
 
 ![](https://goodbits-production.s3.amazonaws.com/uploads/newsletter_settings/logo/225/db659964-7ac2-48f1-8ad5-3d4907dfafd6.png)
 
-Hey team, 여기 [토드(Todd)](https://twitter.com/toddbealmear)가 다른 버전의 레일즈를 가져왔습니다! 불행히도 일정을 맞추지 못해서, 우리는 지난 주를 지나쳤습니다.
+Hey team, 여기 [토드(Todd)](https://twitter.com/toddbealmear)가 다른 버전의 주간 레일즈 에디션을 가져왔습니다! 불행히도 일정을 맞추지 못해서, 우리는 지난 주를 지나쳤습니다.
 
 우리는 빠진 주를 다루지 않을 것이지만, 그 기간 동안의 [repo activity](https://github.com/rails/rails/compare/master@%7B2016-05-20%7D...@%7B2016-05-28%7D) 를 확인하는 것을 권장합니다.
 
