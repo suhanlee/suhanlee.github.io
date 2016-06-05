@@ -7,7 +7,7 @@ author: Suhan Lee
 description: > # this means to ignore newlines until "baseurl:"
   Software Development journey
 
-url: "http://suhanlee.gitub.io" # the base hostname & protocol for your site
+url: "http://suhanlee.github.io" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: gabriel_rhee
 github_username:  suhanlee
