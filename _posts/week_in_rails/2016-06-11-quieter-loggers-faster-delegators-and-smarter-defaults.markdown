@@ -22,7 +22,7 @@ Ahoy hoy! [Tim](https://twitter.com/imtayadeway) (aka Godfrey[9]) 여기 최신 
 <table>
   <tr>
       <td class="author-profile"><img src="https://goodbits-production.s3.amazonaws.com/uploads/link/thumbnail/3434306/twir_120.png"></td>
-      <td><p><a href="http://suhanlee.github.io/2016/ruby-2-4-integer-action-mailer-rescued-and-more.html">이번주 레일즈 컨트리뷰터</a></p><br>
+      <td><p><a href="http://contributors.rubyonrails.org/contributors/in-time-window/20160604-20160610">이번주 레일즈 컨트리뷰터</a></p><br>
       <div>
         이번주는 26명의 놀라운 사람들을 보았네요. 그 중 3명은 레일즈에 첫 커밋 머지(merged)를 했습니다. 모두에게 큰 감사드립니다!
         다음 주에 참여하는 자신을 생각한다면, 현재 최신 이슈들을 살펴보지 않을까요? 문서화 작업에 기여하는 것도 중요한 시작일 수 있죠!
@@ -94,7 +94,7 @@ Ahoy hoy! [Tim](https://twitter.com/imtayadeway) (aka Godfrey[9]) 여기 최신 
 
 
 ## Wrapping Up
-여기까지 주간 레일즈였습니다! 여기 나열하기 힘들정도로 정말 많은 위대한 컨트리뷰션이 있었습니다. 자유롭게 <a href="https://github.com/rails/rails/compare/master@%7B2016-05-14%7D...@%7B2016-05-20%7D">확인해보세요!</a>
+여기까지 주간 레일즈였습니다! 여기 나열하기 힘들정도로 정말 많은 위대한 컨트리뷰션이 있었습니다. 자유롭게 <a href="https://github.com/rails/rails/compare/master@%7B2016-06-04%7D...@%7B2016-06-10%7D">확인해보세요!</a>
 
 다음 주에 봐요!
 
