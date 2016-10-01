@@ -1,0 +1,106 @@
+---
+layout: post
+title:  "[Go] Go 시작하기"
+date:   2016-10-01 10:00:00 +0900
+categories: go
+---
+
+Go를 간단히 시작하기
+------------
+
+간만에 Go를 다시 들여다 보게 되었다.
+
+다시 공부하는 김에 참조해서 사용하기 위해서 정리해 본다.
+
+Go를 설치하고, $GOPATH 설정이 끝났다고 가정한다.
+
+Try Go
+
+{% highlight go %}
+// hello.go
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, 世界")
+}
+{% endhighlight %}
+
+실행은
+
+{% highlight sh %}
+$ go run hello.go
+{% endhighlight %}
+
+설치는
+(만약 $GOPATH/github.com/suhanlee/hello 에 있다면)
+
+{% highlight sh %}
+$ go install github.com/suhanlee/hello
+{% endhighlight %}
+
+Go는 시작 진입점에 해당하는 기본 패키지가 main 이고 나머지는 라이브러리 패키지이다.
+
+라이브러리를 쓰는 경우는 아래와 같이 메인(main), 라이브러리(library) 패키지를 분리해서  임포트가 가능하다.
+
+패키지를 구분할때 디렉토리 단위로 한다. 디렉토리 경로를 다르게 작성하면 된다.
+
+라이브러리에 해당하는 함수들은 다른 외부 라이브러리가 접근할 때 함수이름의 첫 글자가 대문자이어야 접근이 가능하다.
+
+{% highlight sh %}
+// /golang/src/github.com/suhanlee/simple/test.go
+package simple
+
+func Test() int {
+       	return 1
+}
+   
+{% endhighlight %}
+
+{% highlight sh %}
+// /golang/src/github.com/suhanlee/main/main.go
+package main
+
+import (
+       	"fmt"
+
+       	"github.com/suhanlee/simple"
+)
+
+func main() {
+       	fmt.Println(simple.Test())
+}
+{% endhighlight %}
+
+출력 결과
+
+{% highlight sh %}
+
+$ go run main.go
+1
+
+{% endhighlight %}
+Go 문서와 관련된 명령어들
+
+{% highlight sh %}
+
+$ godoc package                               # 패키지 문서 출력
+$ godoc package function_name                 # 패키지 함수 문서 출력
+$ godoc -src package                          # 패키지 소스 코드 출력
+$ godoc -src package function_name            # 패키지 안의 함수 소스 코드 출력
+$ godoc -http=:7777                           # go doc 서버 띄우기
+
+{% endhighlight %}
+
+라이브러리 가져오기
+{% highlight sh %}
+
+$ go get path/to/package
+
+{% endhighlight %}
+테스트 하기
+
+{% highlight sh %}
+$ go test github.com/suhanlee/library/test
+{% endhighlight %}
