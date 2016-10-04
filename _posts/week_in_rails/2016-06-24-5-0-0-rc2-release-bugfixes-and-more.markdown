@@ -51,7 +51,7 @@ categories: rails
     </td>
   </tr>
   <tr>
-      <td><img src="https://goodbits-production.s3.amazonaws.com/uploads/link/thumbnail/3504987/10473586.jpeg"></td>
+      <td class="author-profile"><img src="https://goodbits-production.s3.amazonaws.com/uploads/link/thumbnail/3504987/10473586.jpeg"></td>
       <td><p><a href="https://github.com/rails/rails/pull/24773">db:structure:load, PostgreSQL Error 발생시 조용한 실패(silent failure) 수정</a></p><br>
       <div>
       SQL 에러가 났을때 db:structure:load 태스크가 조용히 실패(silent failure)합니다. 하지만 이번 커밋으로 에러를 리포트하게 됩니다.
@@ -74,6 +74,7 @@ categories: rails
   </tr>
 </table>
 
+
 ## Changed
 
 <table>
@@ -83,7 +84,8 @@ categories: rails
     <div>
     <b>datetime_tag</b> 헬퍼가 <b>datetime-local</b> input tag 를 생성합니다.
     <br>
-    (역주: 새로운 HTML5 form 표준으로 인한 변경 사항(datetime 태그는 더 이상 존재 안함)으로 수정 하는 듯 합니다. 궁금하신 분은 https://html.spec.whatwg.org/multipage/forms.html#local-date-and-time-state-(type=datetime-local) 를 참조)
+    (역주: 새로운 HTML5 form 표준으로 인한 변경 사항(datetime 태그는 더 이상 존재 안함)으로 수정 하는 듯 합니다.
+     <br>궁금하신 분은 <a href="https://html.spec.whatwg.org/multipage/forms.html#local-date-and-time-state-(type=datetime-local)">https://html.spec.whatwg.org/multipage/forms.html#local-date-and-time-state-(type=datetime-local)</a> 를 참조)
     </div>
     </td>
   </tr>
