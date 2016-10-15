@@ -17,8 +17,8 @@ Nuclide 사용시 CMD + Click이 먹히지 않는 경우(소스 찾아가기가 
 설치된 flow 버전과 일치해야 한다는 점이었다.
 
 아래와 같이 flow 버전을 확인하고
-{% highlight go %}
-➜  firstProject brew info flow
+{% highlight bash %}
+$ brew info flow
 flow: stable 0.33.0 (bottled), HEAD
 Static type checker for JavaScript
 https://flowtype.org/
@@ -38,7 +38,7 @@ zsh completion has been installed to:
 {% endhighlight %}
 
 .flowconfig 파일 안의 버전을 동일하게 맞춘다.(나의 경우는 0.33)
-{% highlight go %}
+{% highlight bash %}
 [version]
 ^0.33.0
 {% endhighlight %}
