@@ -52,3 +52,7 @@ Audio Recording 이 가능한 라이브러리다.
 [react-native-sound](https://github.com/zmxv/react-native-sound)
 Audio Play가 가능한 라이브러리
 
+
+## Google Analytics
+[react-native-google-analytics](https://github.com/idehub/react-native-google-analytics-bridge)
+구글 애널리틱스 라이브러리
