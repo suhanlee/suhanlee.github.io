@@ -2,7 +2,7 @@
 layout: post
 title:  "[Rails] Rails 입문 - 1"
 date:   2016-12-31 10:00:00 +0900
-categories: rails
+categories: rails-guide
 ---
 
 주위에 Rails를 처음 공부하는 사람들을 위해서 도움이 되고자 본 문서를 작성하고자 합니다.
