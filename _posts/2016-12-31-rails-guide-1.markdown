@@ -21,16 +21,16 @@ Rails는 Ruby 언어로 작성되어 있는 루비 라이브러리(gem)입니다
     Ruby 버전은 [RVM(http://rvm.io)](http://rvm.io)이나 [rbenv(https://github.com/rbenv/rbenv)](https://github.com/rbenv/rbenv) 등의 버전 관리 유틸을 사용하면 선택할 수 있습니다.
 
     예를 들어서 RVM이 설치가 되어 있다면 2.3.0으로 변경시에는 아래와 같은 명령을 사용합니다.
-    {% highlight bash %}
-    $ rvm use 2.3.0
-    {% endhighlight %}
+{% highlight bash %}
+$ rvm use 2.3.0
+{% endhighlight %}
 
 - Ruby 버전을 선택 후 Rails Gem 설치가 필요합니다.
 
     Rails는 gem install rails 명령어로 설치합니다
-    {% highlight bash %}
-    $ gem install rails
-    {% endhighlight %}
+{% highlight bash %}
+$ gem install rails
+{% endhighlight %}
 
 
 
