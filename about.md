@@ -5,7 +5,14 @@ author: Suhan Lee
 permalink: /about/
 ---
 
-Hi! My name is <span class="highlight-span">Suhan Lee</span>!
+My name is <span class="highlight-span">Suhan Lee</span>!
 
-> Software Development
+[@linkedin](https://www.linkedin.com/in/suhan-lee-719107b3)
 
+Game Engineering. :)
+
+Android Developer at Samsung Electronics corp.
+
+Developing GameCast, GameRecorder+, Game Launcher, Game Tools Services.
+
+Ruby on Rails Developer at Starship Vending-machine corp.
