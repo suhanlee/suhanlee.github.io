@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Rails] 레일즈 입문 2"
+title:  "[Rails] Rails 입문 - 2"
 date:   2017-01-01 10:00:00 +0900
 categories: rails
 
