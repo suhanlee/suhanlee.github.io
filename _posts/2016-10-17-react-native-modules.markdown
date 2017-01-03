@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[React-Native] 개발 관련 모듈 모음"
+title:  "[react-native] 개발 관련 모듈 모음"
 date:   2016-10-17 10:00:00 +0900
 categories: react
 ---

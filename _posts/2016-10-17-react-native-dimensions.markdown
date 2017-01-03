@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[React-Native] DP, Dimensions"
+title:  "[react-native] DP, Dimensions"
 date:   2016-10-16 10:00:00 +0900
 categories: react
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[React] Atom + Nuclide 사용시 CMD + Click 이 먹히지 않는 경우"
+title:  "[react] Atom + Nuclide 사용시 CMD + Click 이 먹히지 않는 경우"
 date:   2016-10-15 10:00:00 +0900
 categories: react
 ---

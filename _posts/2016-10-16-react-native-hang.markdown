@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[React-Native] react-native 가 hang이 걸리는 경우"
+title:  "[react-native] react-native 가 hang이 걸리는 경우"
 date:   2016-10-16 10:00:00 +0900
 categories: react
 ---
