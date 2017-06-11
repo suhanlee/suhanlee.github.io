@@ -1,0 +1,59 @@
+---
+layout: post
+title:  "[Go] GVM(Go Version Manager)"
+date:   2017-06-09 10:00:00 +0900
+categories: go
+
+---
+
+GVM을 사용해서 Go 버전 관리를 할 수 있습니다
+---------------------------------------------------
+
+RVM(Ruby Version Manager)와 비슷하게 Go 도 버전 관리 도구가 있네요.
+
+이름하여 GVM(Go Version Manager)입니다
+
+[https://github.com/moovweb/gvm](https://github.com/moovweb/gvm)
+
+아래와 같이 shell script 를 실행해서 설치합니다.
+
+{% highlight bash %}
+$ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+{% endhighlight %}
+
+결과가 아래와 같이 나오면 `source ~/.gvm/scripts/gvm` 으로 최신 파일로 업데이트 합니다.
+
+{% highlight bash %}
+Cloning from https://github.com/moovweb/gvm.git to /Users/suhanlee/.gvm
+Created profile for existing install of Go at "/usr/local/go"
+Installed GVM v1.0.22
+
+Please restart your terminal session or to get started right away run
+ `source /Users/suhanlee/.gvm/scripts/gvm`
+{% endhighlight %}
+
+
+그런 다음에 원하는 버전으로 설치를 해야 하는데 아래와 같이 `install` 명령을 사용합니다.
+
+{% highlight bash %}
+$ gvm install go1.8.3
+{% endhighlight %}
+
+
+설치가 완료 되면 `use` 명령어로 해당 하는 버전을 스위칭 하면 됩니다.
+{% highlight bash %}
+$ gvm use go1.8.3
+Now using version go1.8.3
+{% endhighlight %}
+
+현재 사용중인 버전을 확인하려면 `list` 명령을 사용합니다.
+{% highlight bash %}
+$ gvm list
+
+gvm gos (installed)
+
+=> go1.8.3
+   system
+{% endhighlight %}
+
+
