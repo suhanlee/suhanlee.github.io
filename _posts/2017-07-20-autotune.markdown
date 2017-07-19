@@ -1,0 +1,125 @@
+---
+layout: post
+title:  "rails, puma auto-tune"
+date:   2017-07-19 01:00:00 +0900
+categories: rails
+
+---
+puma 설정 관련
+---------------------------------------------------
+
+[루비가 웹 확장에 있어서 많이 느리냐?](https://www.speedshop.co/2017/07/11/is-ruby-too-slow-for-web-scale.html) 는 글을 보다가 auto-tune 하는 방법에 대해서 참고하게 되었다.
+
+대략적으로 요약하면 roda 와 rails 벤치마킹을 하는데 roda 는 `auto-tune`을 사용해서 서버 자원을 최대한 활용했고
+rails 는 지정된 puma 셋팅으로 인해서 벤치마킹이 공정하지 않다는 이야기다.
+
+거기서 참고해서 눈여겨 볼만한 부분은 `auto-tune` 을 어떻게 했냐는 것인데
+VCPU, 메모리 까지 고려해서 나름 합리적으로 설정이 되어 있는 것 같아서 일단 공유한다.
+
+{% highlight ruby %}
+#!/usr/bin/env ruby
+# Instantiate about one process per X MiB of available memory, scaling up to as
+# close to MAX_THREADS as possible while observing an upper bound based on the
+# number of virtual/logical CPUs. If there are fewer processes than
+# MAX_THREADS, add threads per process to reach MAX_THREADS.
+require 'etc'
+
+KB_PER_WORKER = 64 * 1_024 # average of peak PSS of single-threaded processes (watch smem -k)
+MIN_WORKERS = 2
+MAX_WORKERS_PER_VCPU = 1.25 # virtual/logical
+MIN_THREADS_PER_WORKER = 1
+MAX_THREADS = Integer(ENV['MAX_CONCURRENCY'] || 256)
+
+def meminfo(arg)
+  File.open('/proc/meminfo') do |f|
+    f.each_line do |line|
+      key, value = line.split(/:\s+/)
+      return value.split(/\s+/).first.to_i if key == arg
+    end
+  end
+
+  fail "Unable to find `#{arg}' in /proc/meminfo!"
+end
+
+def auto_tune
+  avail_mem = meminfo('MemAvailable') * 0.8 - MAX_THREADS * 1_024
+
+  workers = [
+    [(1.0 * avail_mem / KB_PER_WORKER).floor, MIN_WORKERS].max,
+    (Etc.nprocessors * MAX_WORKERS_PER_VCPU).ceil
+  ].min
+
+  threads_per_worker = [
+    workers < MAX_THREADS ? (1.0 * MAX_THREADS / workers).ceil : -Float::INFINITY,
+    MIN_THREADS_PER_WORKER
+  ].max
+
+  [workers, threads_per_worker]
+end
+
+p auto_tune if $0 == __FILE__
+{% endhighlight %}
+
+아래는 위에서 얻어낸 최적의 worker, thread 로 적용할 puma 설정 파일 예시다.
+
+{% highlight ruby %}
+ Puma can serve each request in a thread from an internal thread pool.
+# The `threads` method setting takes two numbers a minimum and maximum.
+# Any libraries that use thread pools should be configured to match
+# the maximum value specified for Puma. Default is set to 5 threads for minimum
+# and maximum, this matches the default thread size of Active Record.
+#
+threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }.to_i
+threads threads_count, threads_count
+
+# Specifies the `port` that Puma will listen on to receive requests, default is 3000.
+#
+port        ENV.fetch("PORT") { 3000 }
+
+# Specifies the `environment` that Puma will run in.
+#
+environment ENV.fetch("RAILS_ENV") { "development" }
+
+# Specifies the number of `workers` to boot in clustered mode.
+# Workers are forked webserver processes. If using threads and workers together
+# the concurrency of the application would be max `threads` * `workers`.
+# Workers do not work on JRuby or Windows (both of which do not support
+# processes).
+#
+workers ENV.fetch("WEB_CONCURRENCY") { 2 }
+
+# Use the `preload_app!` method when specifying a `workers` number.
+# This directive tells Puma to first boot the application and load code
+# before forking the application. This takes advantage of Copy On Write
+# process behavior so workers use less memory. If you use this option
+# you need to make sure to reconnect any threads in the `on_worker_boot`
+# block.
+#
+
+preload_app!
+
+# The code in the `on_worker_boot` will be called if you are using
+# clustered mode by specifying a number of `workers`. After each worker
+# process is booted this block will be run, if you are using `preload_app!`
+# option you will want to use this block to reconnect to any threads
+# or connections that may have been created at application boot, Ruby
+# cannot share connections between processes.
+#
+# on_worker_boot do
+#   ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
+# end
+
+# Allow puma to be restarted by `rails restart` command.
+plugin :tmp_restart
+{% endhighlight %}
+
+(1) workers 뒤의 인자는 프로세스 개수를 의미하고 threads 뒤의 인자는 동작할 스레드 갯수를 의미한다.
+worker가 지정되어야 puma 는 클러스터 모드로 동작하여 여러개의 프로세스가 동작한다. 지정 하지 않으면 1개의 프로세스에서 멀티 스레드 방식으로 돌아가는 것이다.
+
+(2) preload_app! 은 클러스터 모드로 동작할 때 해당 프로세스를 미리 로드해서 동작시키는 옵션을 의미한다.
+
+(3) 루비나 파이썬의 경우 GIL(Global Inter Lock)이 존재하기 때문에 1개의 프로세스 내에서 I/O 일을 하지 않는 스레드들은
+순차적으로 동작하게 되어 있다. (GIL과 관련해서 좀 더 재미난 내용은 나중에...)
+
+
+
