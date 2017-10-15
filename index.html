@@ -12,12 +12,11 @@ layout: default
 
 <section class="post-list">
   <div class="container">
-    <h1 class="page-heading">Posts</h1>
     <ul>
       {% for post in paginator.posts %}
         <article class="post-item">
 
-          {{ post.categories }}
+          <span class="post-category">{{ post.categories }}</span>
 
           <span class="post-time">
             <time>{{ post.date | date: '%B %d, %Y' }} <strong> - </strong></time>
@@ -26,8 +25,8 @@ layout: default
               <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
               <strong> - </strong>
           </span>
-          <p class="post-stub">{{ post.content | strip_html | truncatewords: 20 }}</p>
-          <a href="{{ post.url | prepend: site.baseurl}}"> Read More </a>
+          <p class="post-stub">{{ post.content | strip_html | truncatewords: 30 }}</p>
+          <a href="{{ post.url | prepend: site.baseurl}}"> More </a>
         </article>
         
         <!-- hr -->

@@ -9,8 +9,6 @@ My name is <span class="highlight-span">Suhan Lee</span>!
 
 [@linkedin](https://www.linkedin.com/in/suhan-lee-719107b3)
 
-Game Engineering. :)
-
 Android Developer at Samsung Electronics corp.
 
 Developing GameCast, GameRecorder+, Game Launcher, Game Tools Services.

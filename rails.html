@@ -1,16 +1,15 @@
 ---
 layout: rails
-title: 레일즈 가이드
 author: Suhan Lee
-permalink: /rails/
+permalink: /rails-guide/
 ---
+
 <section class="post-list">
     <div class="container">
-        <h1 class="page-heading">Posts</h1>
         <ul>
             {% for post in site.categories.rails-guide %}
             <article class="post-item">
-
+                <span class="post-category">{{ post.categories }}</span>
           <span class="post-time">
             <time>{{ post.date | date: '%B %d, %Y' }} <strong> - </strong></time>
           </span>

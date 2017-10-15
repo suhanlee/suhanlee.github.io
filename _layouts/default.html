@@ -4,16 +4,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300i,400i,600">
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,100italic,300italic,300' rel='stylesheet' type='text/css'>
 
-	{% if site.heading_font %}
-		<link href='https://fonts.googleapis.com/css?family={{ site.heading_font }}:400,600' rel='stylesheet' type='text/css'>
-		{% assign header_font = site.heading_font %}
-	{% else %}
-		<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-		{% assign header_font = 'Lobster' %}
-	{% endif %}
+	<link href="http://fonts.googleapis.com/earlyaccess/{{ site.heading_font }}.css">
+
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/css/fontello-embedded.css">
 
@@ -34,30 +28,36 @@
 				<div class="container">
 		  			<a href="/">
 						<h1 style="font-family: {{ header_font }}" class="logo">
-						{% if page.title == "About" %}
-							About
-						{% else %}
-							{{ site.title }} 
-						{% endif %}
+							{{ site.title }}
 						</h1>
 					</a>
 					<br />
 					<ul class="navlist">
-						<a href="/react">
-							"리액트"
-						</a>
-						&nbsp;
-						<a href="/rails">
-							"레일즈"
-						</a>
-						&nbsp;
-						<a href="/week_in_rails">
-							"주간 레일즈"
-						</a>
-						&nbsp;
-						<a href="/think">
-							"생각"
-						</a>
+						<li>
+							<a href="/react">
+								react
+							</a>
+						</li>
+						<li>
+							<a href="/rails-etc">
+								rails-etc
+							</a>
+						</li>
+						<li>
+							<a href="/rails-guide">
+								rails-guide
+							</a>
+						</li>
+						<li>
+							<a href="/week_in_rails">
+								The week in rails
+							</a>
+						</li>
+						<li>
+							<a href="/think">
+								think
+							</a>
+						</li>&nbsp;
 					</ul>
 		  		</div>
 			</nav>

@@ -5,7 +5,7 @@ email: suhan.lee.k@gmail.com
 author: Suhan Lee
 
 description: > # this means to ignore newlines until "baseurl:"
-  Software Development journey
+  "There's difference knowing the path and walking the path."
 
 url: "http://suhanlee.github.io" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -23,7 +23,7 @@ comments: true
 #    permalink: /:year/:title.html
 
 
-heading_font: Lobster 
+heading_font: Nanum Gothic
 about_footer: true
 short_bio: >
     A day without laughter is a day wasted.

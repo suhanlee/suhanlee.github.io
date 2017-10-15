@@ -4,14 +4,14 @@ title: 리액트 관련
 author: Suhan Lee
 permalink: /react/
 ---
+
 <section class="post-list">
     <div class="container">
-        <h1 class="page-heading">Posts</h1>
         <ul>
             {% for post in site.categories.react %}
             <article class="post-item">
-
-          <span class="post-time">
+                <span class="post-category">{{ post.categories }}</span>
+                <span class="post-time">
             <time>{{ post.date | date: '%B %d, %Y' }} <strong> - </strong></time>
           </span>
                 <span class="post-name">
